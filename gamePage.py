@@ -9,9 +9,9 @@ class GamePage():
         self.cells.update()
 
         self.infos = InfoPage(self.cells.winfo_width(), '', root_)
-        self.infos.setCmdBtn('restart', self.reset_cell_grid)
-        self.infos.setCmdBtn('change_diff', self.return_to_menu)
-        self.infos.setTextvariableLabel(self.cells.nbOfFlagsUsed)
+        self.infos.set_cmd_btn('restart', self.reset_cell_grid)
+        self.infos.set_cmd_btn('change_diff', self.return_to_menu)
+        self.infos.set_textvariable_label(self.cells.nb_of_flags_used)
 
     def reset_cell_grid(self):
         # Get parent

@@ -5,7 +5,7 @@ from cellGrid import CellGrid
 
 
 class InfoPage(tkinter.Frame):
-    def __init__(self, cells_width, text_stringVar, *args, **kwargs):
+    def __init__(self, cells_width, text_stringvar, *args, **kwargs):
         tkinter.Frame.__init__(self, *args, **kwargs)
 
         parent = self.nametowidget(self.winfo_parent())
@@ -17,51 +17,51 @@ class InfoPage(tkinter.Frame):
         self.update()
         self.grid_propagate(False)
 
-        self.widgetDict = {}
+        self.widget_dict = {}
 
         # Flag image
-        pilImage = Image.open('images/flag.png')
+        pil_image = Image.open('images/flag.png')
         # Resize image
         sizeImg = self.winfo_width()
-        pilImage_resized = pilImage.resize((sizeImg, sizeImg))
+        pil_image_resized = pil_image.resize((sizeImg, sizeImg))
         # Convert PIL image into Tkinter image and store the object
-        tkImage = ImageTk.PhotoImage(pilImage_resized)
-        self.imageContainer = tkImage
+        tk_image = ImageTk.PhotoImage(pil_image_resized)
+        self.image_container = tk_image
 
         # Flag label
-        self.widgetDict['labelFlag'] = tkinter.Label(
+        self.widget_dict['label_flag'] = tkinter.Label(
             self,
-            image=self.imageContainer,
+            image=self.image_container,
             text='faf',
             font=settings.FONT_INFO,
             compound=tkinter.TOP
         )
-        self.widgetDict['labelFlag'].grid(row=0, column=0)
+        self.widget_dict['label_flag'].grid(row=0, column=0)
 
-        self.widgetDict['restart'] = tkinter.Button(
+        self.widget_dict['restart'] = tkinter.Button(
             self,
             font=settings.FONT_INFO,
             text='Restart'
         )
-        self.widgetDict['restart'].grid(row=1, column=0)
+        self.widget_dict['restart'].grid(row=1, column=0)
 
-        self.widgetDict['change_diff'] = tkinter.Button(
+        self.widget_dict['change_diff'] = tkinter.Button(
             self,
             font=settings.FONT_INFO,
             text='Change difficulty'
         )
-        self.widgetDict['change_diff'].grid(row=2, column=0)
+        self.widget_dict['change_diff'].grid(row=2, column=0)
 
         self.grid_rowconfigure(0, weight=1)
         self.grid_rowconfigure(1, weight=2)
         self.grid_rowconfigure(2, weight=2)
 
-    def setCmdBtn(self, btn_name, func):
-        self.widgetDict[btn_name].configure(command=func)
+    def set_cmd_btn(self, btn_name, func):
+        self.widget_dict[btn_name].configure(command=func)
 
-    def setTextvariableLabel(self, text_stringVar):
-        self.widgetDict['labelFlag'].configure(
-            textvariable=text_stringVar
+    def set_textvariable_label(self, text_stringvar):
+        self.widget_dict['label_flag'].configure(
+            textvariable=text_stringvar
         )
 
 

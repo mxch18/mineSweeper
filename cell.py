@@ -16,11 +16,11 @@ class Cell(tkinter.Button):
 
         if info_btn['in'].is_first_click:
             # Create minefield
-            info_btn['in'].createMinefield(
+            info_btn['in'].create_mine_field(
                 *[info_btn.get(key) for key in ('row', 'column')]
             )
 
-        info_btn['in'].mineSweep(
+        info_btn['in'].mine_sweep(
             *[info_btn.get(key) for key in ('row', 'column')]
         )
 

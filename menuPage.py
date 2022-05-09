@@ -8,13 +8,13 @@ class MenuPage(tkinter.Frame):
     def __init__(self, *args, **kwargs):
         tkinter.Frame.__init__(self, *args, **kwargs)
 
-        self.btnList = {}
-        self.pixelVirtual = tkinter.PhotoImage(width=1, height=1)
+        self.btn_list = {}
+        self.pixel_virtual = tkinter.PhotoImage(width=1, height=1)
         self.place(x=0, y=0)
         self.update()
 
         # 4 buttons : 8x8 (10 mines) , 12x12 (24 mines), 16x16 (40 mines), custom
-        btnHeightWidth = math.floor(
+        btn_height_width = math.floor(
             min(
                 self.winfo_width()/2,
                 self.winfo_height()/2
@@ -25,12 +25,12 @@ class MenuPage(tkinter.Frame):
         width_parent = parent.winfo_width()
         height_parent = parent.winfo_height()
 
-        self.btnList['8x8'] = tkinter.Button(
+        self.btn_list['8x8'] = tkinter.Button(
             self,
             font=settings.FONT,
-            image=self.pixelVirtual,
-            height=btnHeightWidth,
-            width=btnHeightWidth,
+            image=self.pixel_virtual,
+            height=btn_height_width,
+            width=btn_height_width,
             compound='c',
             text='8x8\n(10 mines)',
             command=lambda: GamePage(8, 8, 10,
@@ -41,12 +41,12 @@ class MenuPage(tkinter.Frame):
                                      )
         )
 
-        self.btnList['12x12'] = tkinter.Button(
+        self.btn_list['12x12'] = tkinter.Button(
             self,
             font=settings.FONT,
-            image=self.pixelVirtual,
-            height=btnHeightWidth,
-            width=btnHeightWidth,
+            image=self.pixel_virtual,
+            height=btn_height_width,
+            width=btn_height_width,
             compound='c',
             text='12x12\n(24 mines)',
             command=lambda: GamePage(12, 12, 24,
@@ -57,12 +57,12 @@ class MenuPage(tkinter.Frame):
                                      )
         )
 
-        self.btnList['16x16'] = tkinter.Button(
+        self.btn_list['16x16'] = tkinter.Button(
             self,
             font=settings.FONT,
-            image=self.pixelVirtual,
-            height=btnHeightWidth,
-            width=btnHeightWidth,
+            image=self.pixel_virtual,
+            height=btn_height_width,
+            width=btn_height_width,
             compound='c',
             text='16x16\n(40 mines)',
             command=lambda: GamePage(16, 16, 40,
@@ -73,9 +73,9 @@ class MenuPage(tkinter.Frame):
                                      )
         )
 
-        self.btnList['8x8'].grid(column=0, row=0)
-        self.btnList['12x12'].grid(column=1, row=0)
-        self.btnList['16x16'].grid(
+        self.btn_list['8x8'].grid(column=0, row=0)
+        self.btn_list['12x12'].grid(column=1, row=0)
+        self.btn_list['16x16'].grid(
             column=0, row=1, columnspan=2, sticky=tkinter.EW
         )
         self.update()
