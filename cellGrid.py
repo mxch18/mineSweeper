@@ -118,7 +118,7 @@ class CellGrid(tkinter.Frame):
         nb_of_flags_used = int(self.nb_of_flags_used.get().split(sep='/')[0])
         return nb_of_flags_used < self.nb_mines
 
-    def increase_nb_of_flags(self):
+    def increase_nb_of_flags_used(self):
         nb_of_flags_used = int(self.nb_of_flags_used.get().split(sep='/')[0])
         if nb_of_flags_used < self.nb_mines:
             self.nb_of_flags_used.set(f'{nb_of_flags_used+1}/{self.nb_mines}')
